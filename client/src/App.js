@@ -1,21 +1,26 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
 
-class App extends Component {
-  render() {
+//We will use Route in order to define the different routes in our application
+import { Route, Routes } from "react-router-dom";
+
+//We import all the components we need in our app
+
+import Navbar from "./components/navbar";
+import RecordList from "./components/recordList";
+import Edit from "./components/edit";
+import Create from "./components/create";
+
+const App = () => {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+        <div>
+            <Navbar />
+            <Routes>
+                <Route exact path="/" element={<RecordList />} />
+                <Route path="/edit/:id" element={<Edit />} />
+                <Route path="/create" element={<Create />} />
+            </Routes>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
     );
-  }
-}
+};
 
 export default App;
