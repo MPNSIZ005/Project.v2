@@ -43,7 +43,7 @@ recordRoutes.route("/record/add").post(function (req, response) {
     nameAndSurname: req.body.nameAndSurname,
     institution: req.body.institution,
     email: req.body.email,
-    specialisation: req.body.specilisation,
+    specialisation: req.body.specialisation,
     publications: req.body.publications,
     totalCitations: req.body.totalCitations
   };
