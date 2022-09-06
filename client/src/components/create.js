@@ -8,7 +8,8 @@ export default function Create() {
     email: "", 
     specialisation: "", 
     publications: "", 
-    totalCitations: ""
+    totalCitations: "",
+    gender: ""
   });
   const navigate = useNavigate();
 
@@ -38,7 +39,7 @@ export default function Create() {
       return;
     });
 
-    setForm({ nameAndSurname: "", institution: "", email: "", specialisation: "", publications: "", totalCitations: "" });
+    setForm({ nameAndSurname: "", institution: "", email: "", specialisation: "", publications: "", totalCitations: "", gender: "" });
     navigate("/");
   }
 
@@ -105,6 +106,16 @@ export default function Create() {
             id="totalCitations"
             value={form.totalCitations}
             onChange={(e) => updateForm({ totalCitations: e.target.value })}
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="gender">Gender</label>
+          <input
+            type="text"
+            className="form-control"
+            id="gender"
+            value={form.gender}
+            onChange={(e) => updateForm({ gender: e.target.value })}
           />
         </div>
         <div className="form-group">

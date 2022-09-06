@@ -9,6 +9,7 @@ export default function Edit() {
     specialisation: "",
     publications: "",
     totalCitations: "",
+    gender: "",
     records: [],
   });
   const params = useParams();
@@ -55,7 +56,8 @@ export default function Edit() {
       email: form.email,
       specialisation: form.specialisation,
       publications: form.publications,
-      totalCitations: form.totalCitations
+      totalCitations: form.totalCitations,
+      gender: form.gender
     };
 
     // This will send a post request to update the data in the database.
@@ -133,6 +135,16 @@ export default function Edit() {
             id="totalCitations"
             value={form.totalCitations}
             onChange={(e) => updateForm({ totalCitations: e.target.value })}
+          />
+        </div>
+        <div className="form-group">
+        <label htmlFor="gender">Gender</label>
+          <input
+            type="text"
+            className="form-control"
+            id="gender"
+            value={form.gender}
+            onChange={(e) => updateForm({ gender: e.target.value })}
           />
         </div>
         <br />

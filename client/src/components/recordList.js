@@ -9,6 +9,7 @@ const Record = (props) => (
     <td>{props.record.specialisation}</td>
     <td>{props.record.publications}</td>
     <td>{props.record.totalCitations}</td>
+    <td>{props.record.gender}</td>
     <td>
       <Link className="btn btn-link" to={`/edit/${props.record._id}`}>Edit</Link> |
       <button className="btn btn-link"
@@ -81,6 +82,7 @@ export default function RecordList() {
             <th>Specialisation</th>
             <th>Publications</th>
             <th>Total Citations</th>
+            <th>Gender</th>
           </tr>
         </thead>
         <tbody>{recordList()}</tbody>
